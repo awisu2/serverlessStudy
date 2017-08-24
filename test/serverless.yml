@@ -66,14 +66,7 @@ functions:
     events:
       - http:
           path: hello
-          method: get
-      - http:
-          path: hello
-          method: post
-          cors: true
-      - http:
-          path: hello
-          method: put
+          method: any
           cors: true
 
 #    The following are a few example events you can configure
