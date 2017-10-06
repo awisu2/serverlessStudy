@@ -1,0 +1,22 @@
+{
+  "name": "binarysendgetapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel -w src -d dist",
+    "dev": "npm run build -- -w",
+    "deploy": "serverless deploy",
+    "remove": "serverless remove"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0"
+  },
+  "dependencies": {
+    "msgpack-lite": "^0.1.26"
+  }
+}

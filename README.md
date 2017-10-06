@@ -29,6 +29,9 @@ note: serverless is only deployment tool. not modan js, not on any library.
 
 ```shell
 npm init
+```
+
+```shell
 npm i -D babel-cli babel-preset-env
 echo '{ "presets": ["env"] }' > .babelrc
 mkdir src
@@ -42,4 +45,8 @@ console.log(Test.hello())
 EOF
 babel src -d dist
 node dist/index.js
+```
+
+```
+mv handler.js src/
 ```
