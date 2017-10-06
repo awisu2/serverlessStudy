@@ -5,9 +5,9 @@
   "main": "handler.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel -w src -d dist",
+    "build": "babel src -d dist",
     "dev": "npm run build -- -w",
-    "deploy": "serverless deploy",
+    "deploy": "npm run build && serverless deploy",
     "remove": "serverless remove"
   },
   "author": "",
@@ -15,7 +15,8 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.0",
-    "js-yaml": "^3.10.0"
+    "js-yaml": "^3.10.0",
+    "serverless-apigw-binary": "^0.4.1"
   },
   "dependencies": {
     "msgpack-lite": "^0.1.26"

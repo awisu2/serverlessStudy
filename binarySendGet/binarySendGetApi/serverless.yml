@@ -16,3 +16,9 @@ functions:
           path: hello
           method: get
           integration: lambda
+custom:
+  apigwBinary:
+    types:
+      - application/x-msgpack
+plugins:
+  - serverless-apigw-binary
