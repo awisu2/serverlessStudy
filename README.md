@@ -50,3 +50,39 @@ node dist/index.js
 ```
 mv handler.js src/
 ```
+
+#### config custom
+
+```shell
+npm init
+npm i -D js-yaml
+```
+
+**attention: this code delete serverless.yml comments**
+
+```shell
+node << EOF
+let yaml = require('js-yaml')
+let fs = require('fs')
+let fileName = 'serverless.yml'
+
+let f = fs.readFileSync(fileName, 'utf8')
+
+let config = yaml.safeLoad(f);
+config.provider.profile = 'serverless'
+config.provider.region = 'ap-northeast-1'
+config.provider.memorySize = 128
+config.provider.timeout = 3
+config.provider.deploymentBucket = {}
+// config.provider.deploymentBucket.name = 'my_bucket'
+config.provider.deploymentBucket.serverSideEncryption = 'AES256'
+let _config = yaml.dump(config)
+
+console.log('>>>> before custom ' + fileName + ' >>>>')
+console.log(f)
+console.log('<<<< before custom ' + fileName + ' <<<<')
+fs.writeFileSync(fileName, _config)
+EOF
+```
+
+
