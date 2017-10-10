@@ -76,6 +76,23 @@ config.provider.timeout = 3
 config.provider.deploymentBucket = {}
 // config.provider.deploymentBucket.name = 'my_bucket'
 config.provider.deploymentBucket.serverSideEncryption = 'AES256'
+config.exclude = [
+  'src/**',
+  'dist/test/**',
+]
+config.functions = {
+  'hello': {
+    'handler': 'dist/handler.hello',
+    'events': [{
+      'http': {
+        path: 'hello',
+        method: 'get',
+        cors: true
+      }
+    }]
+  }
+}
+
 let _config = yaml.dump(config)
 
 console.log('>>>> before custom ' + fileName + ' >>>>')
