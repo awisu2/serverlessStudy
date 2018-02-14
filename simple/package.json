@@ -1,0 +1,19 @@
+{
+  "name": "simple",
+  "version": "1.0.0",
+  "description": "ˇ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sls": "sls",
+    "deploy": "npm run sls deploy",
+    "remove": "npm run sls remove",
+    "rollback": "npm run sls rollback"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "serverless": "^1.26.0"
+  }
+}
